@@ -1,16 +1,29 @@
+import java.util.Currency;
 
 public class IRSystem{
 
 	public static void main(String[] args) {
 		
+		String file = "C:\\Users\\Tejan\\Dropbox\\workspace\\Microblog information retrieval system\\src\\Trec_microblog11.txt";
+		
 		drawTitle();
 		                                                            
 		System.out.println();
+	
+		long start,end;
+		double result;
 		
-		Preprocessing p = new Preprocessing(null);
+		// Test
 		
+		start = System.currentTimeMillis();
 		
-		//Preprocessing p = new Preprocessing(stopWords);
+		Preprocessing p = new Preprocessing(file);
+			
+		end = System.currentTimeMillis();
+		
+		result = (double)(end-start)/1000;
+		
+		System.out.printf("Results preprocessing: %.2fs", result);
 		
 	}
 	
