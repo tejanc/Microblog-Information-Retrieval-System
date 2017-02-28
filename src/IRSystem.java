@@ -1,5 +1,3 @@
-import java.util.Currency;
-
 public class IRSystem{
 
 	public static void main(String[] args) {
@@ -13,7 +11,9 @@ public class IRSystem{
 		long start,end;
 		double result;
 		
-		// Test
+		
+		
+		// Test Preprocessing
 		
 		start = System.currentTimeMillis();
 		
@@ -23,7 +23,22 @@ public class IRSystem{
 		
 		result = (double)(end-start)/1000;
 		
-		System.out.printf("Results preprocessing: %.2fs", result);
+		System.out.printf("Results preprocessing: \t%.2fs\n", result);
+		
+		
+		
+		// Test Indexing
+		
+		start = System.currentTimeMillis();
+		
+		Indexing i = new Indexing(p.getIndexTermsList(), p.getDocumentList());
+		
+		end = System.currentTimeMillis();
+		
+		result = (double)(end-start)/1000;
+		
+		System.out.printf("Results indexing: \t%.2fs\n", result);
+		
 		
 	}
 	
