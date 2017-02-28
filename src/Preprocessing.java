@@ -82,6 +82,10 @@ public class Preprocessing {
 //		}
 		
 	}
+	
+	public ArrayList<String> getIndexTermsList() {
+		return this.indexTerms;
+	}
 
 	
 	private boolean isNumeric(String str) {
