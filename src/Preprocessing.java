@@ -70,21 +70,25 @@ public class Preprocessing {
 			}
 		}
 		
-//		// Second pass... Build the final index terms list
-//		for (int i = 0; i < indexTerms.size(); i++) {
-//			for(int j = 0; j < stopWordList.size(); j++) {
-//				String stopWord = stopWordList.get(j);
-//				if (indexTerms.get(i).toLowerCase().equals(stopWord)) {
-//					indexTerms.remove(i);
-//					i--; // moves ArrayList index back by one since we removed an element.
-//				}
-//			}
-//		}
+		// Second pass... Build the final index terms list
+		for (int i = 0; i < indexTerms.size(); i++) {
+			for(int j = 0; j < stopWordList.size(); j++) {
+				String stopWord = stopWordList.get(j);
+				if (indexTerms.get(i).toLowerCase().equals(stopWord)) {
+					indexTerms.remove(i);
+					i--; // moves ArrayList index back by one since we removed an element.
+				}
+			}
+		}
 		
 	}
 	
 	public ArrayList<String> getIndexTermsList() {
 		return this.indexTerms;
+	}
+	
+	public ArrayList<String> getDocumentList() {
+		return this.documentList;
 	}
 
 	
