@@ -2,16 +2,17 @@ import java.io.*;
 import java.util.*;
 
 /** 
-* @author Tejan Chinnakonda
-* 
-* @description
+* <h1>Preprocessing</h1>
 * Functions for tokenization and stopword removal.
 * The index terms will be all the words left after filtering
 * punctuation tokens, numbers, stopwords, etc. 
-* 
-* @input/output
+* <h1>Input/Output</h1>
 * Inputs: Documents that are read on by one from the collection.
 * Outputs: Tokens to be added to the index (vocabulary).
+* 
+* @author 	Tejan Chinnakonda
+* @version	1.0
+* @since 	2017-02-27
 */
 public class Preprocessing {
 	
@@ -70,16 +71,16 @@ public class Preprocessing {
 			}
 		}
 		
-		// Second pass... Build the final index terms list
-		for (int i = 0; i < indexTerms.size(); i++) {
-			for(int j = 0; j < stopWordList.size(); j++) {
-				String stopWord = stopWordList.get(j);
-				if (indexTerms.get(i).toLowerCase().equals(stopWord)) {
-					indexTerms.remove(i);
-					i--; // moves ArrayList index back by one since we removed an element.
-				}
-			}
-		}
+//		// Second pass... Build the final index terms list
+//		for (int i = 0; i < indexTerms.size(); i++) {
+//			for(int j = 0; j < stopWordList.size(); j++) {
+//				String stopWord = stopWordList.get(j);
+//				if (indexTerms.get(i).toLowerCase().equals(stopWord)) {
+//					indexTerms.remove(i);
+//					i--; // moves ArrayList index back by one since we removed an element.
+//				}
+//			}
+//		}
 		
 	}
 	
